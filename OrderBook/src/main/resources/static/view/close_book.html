@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div class="row text-center">
+
+		<div class="col-lg-8">
+			<label><h3>Close an Order book</h3></label>
+		</div>
+
+		<div class="col-lg-4">
+			<select class="form-control" id="orderBookOpenId"
+				ng-model="selectedOrderBook">
+				<option value="">Please select an open order book ....</option>
+				<option ng-repeat="orderBookopen in orderBookopens"
+					value="{{orderBookopen.orderBookId}}">{{orderBookopen.orderBookName}}</option>
+			</select>
+		</div>
+
+		<div class="col-lg-4">
+			<button type="button" class="btn btn-primary btn-block"
+				id="closeOrderBookId" ng-click="closeOrderBook(selectedOrderBook)">{{buttonTitle}}
+			</button>
+		</div>
+		<br /> <br />
+	</div>
+</body>
+</html>

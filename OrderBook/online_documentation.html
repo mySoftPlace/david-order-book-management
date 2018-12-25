@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>List of web services (REST) exposed</title>
+</head>
+
+<table border ="1">
+	<thead>
+	<tr>
+	<td colspan="2">
+	List of web services (REST) exposed<br/>
+	For the test, please use this user: login: user;   password: 5678
+	</td>
+	</tr>
+		<tr>
+			<th><strong>Features</strong></th>
+			<th><strong>Web services (REST)</strong></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr>
+			<td>Open an Order Book</td>
+			<td>"/user/book/open</td>
+		</tr>
+		<tr>
+			<td>Update an Order book</td>
+			<td>/user/book/update</td>
+		</tr>
+		<tr>
+			<td>Save an Order in an order book</td>
+			<td>/user/order/save</td>
+		</tr>
+		<tr>
+			<td>Statistics before the execution of the order book</td>
+			<td>/user/statistics/before/execution</td>
+		</tr>
+		<tr>
+			<td>Statistics after the execution of the order book</td>
+			<td>/user/statistics/after/execution</td>
+		</tr>
+		<tr>
+			<td>Find a specific Order</td>
+			<td>/user/order/{orderId}</td>
+		</tr>
+		<tr>
+			<td>Get the execution price (for statistic)</td>
+			<td>/user/book/exec/price/{orderBookId}</td>
+		</tr>
+		<tr>
+			<td>Execute an order book</td>
+			<td>/user/book/execution/{orderBookId}/{executionPrice}/{executionTotalQty}</td>
+		</tr>
+		<tr>
+			<td>Find and Display (in a drop down list) all financial
+				instrument</td>
+			<td>/user/instrument/all</td>
+		</tr>
+		<tr>
+			<td>Find and Display (in a drop down list) all opened order book</td>
+			<td>/user/orderBookOpen/all</td>
+		</tr>
+		<tr>
+			<td>Find and Display (in a drop down list) all closed order book</td>
+			<td>/user/book/close/all</td>
+		</tr>
+		<tr>
+			<td>Find and Display (in a drop down list) all order book</td>
+			<td>/user/book/all</td>
+		</tr>
+	</tbody>
+</table>
+<body>
+
+</body>
+</html>

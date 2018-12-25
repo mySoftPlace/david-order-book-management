@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div class="row text-center">
+
+		<div class="col-lg-8">
+			<label><h3>Statistics per Order book</h3></label>
+		</div>
+
+		<div class="col-lg-4">
+			<select class="form-control" id="orderBookId"
+				ng-model="selectedOrderBook">
+				<option value="">Please select an order book ....</option>
+				<option ng-repeat="orderBook in orderBooks"
+					value="{{orderBook.orderBookId}}">{{orderBook.orderBookName}}</option>
+			</select>
+		</div>
+
+		<div class="col-lg-4">
+			<button type="button" class="btn btn-primary btn-block"
+				id="orderBookStatId"
+				ng-click="displayOrderBookStat(selectedOrderBook)">{{buttonTitle}}
+			</button>
+		</div>
+		<br /> <br />
+		<div class="col-lg-8">
+			<table id="statisticBeforeExecutionId" class="table table-striped">
+				<thead>
+					<tr>
+						<th>Amount of Orders</th>
+						<th>Demand</th>
+						<th>Biggest Order</th>
+						<th>Smallest Order</th>
+						<th>Earliest Order Entry</th>
+						<th>Last Order Entry</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>{{statisticPerBook.totOrdAmtPerBook}}</td>
+						<td>{{statisticPerBook.totDemandPerBook}}</td>
+						<td>{{statisticPerBook.maxOrdPerBook}}</td>
+						<td>{{statisticPerBook.minOrdPerBook}}</td>
+						<td>{{statisticPerBook.earliestOrdEntryPerBook.entryDate}}</td>
+						<td>{{statisticPerBook.lastOrderEntryPerBook.entryDate}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<label><h3>Statistics after execution of the order book</h3></label>
+			<table id="statisticAfterExecutionId" class="table table-striped">
+				<thead>
+					<tr>
+						<th>Amount of orders</th>
+						<th>Demand</th>
+						<th>Amount of valid orders</th>
+						<th>Amount of invalid orders</th>
+						<th>Valid demand</th>
+						<th>Invalid demand</th>
+						<th>Biggest order</th>
+						<th>Smallest order</th>
+						<th>Earliest order entry</th>
+						<th>Last order entry</th>
+						<th>Execution price</th>
+						<th>Execution quantity</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>{{statisticPerBook.totOrdAmtPerBook}}</td>
+						<td>{{statisticPerBook.totDemandPerBook}}</td>
+						<td>{{statisticPerBook.totValidOrdAmtPerBook}}</td>
+						<td>{{statisticPerBook.totInvalidOrdAmtPerBook}}</td>
+						<td>{{statisticPerBook.totValidDemandPerBook}}</td>
+						<td>{{statisticPerBook.totInvalidDemandPerBook}}</td>
+						<td>{{statisticPerBook.maxOrdPerBook}}</td>
+						<td>{{statisticPerBook.minOrdPerBook}}</td>
+						<td>{{statisticPerBook.earliestOrdEntryPerBook.entryDate}}</td>
+						<td>{{statisticPerBook.lastOrderEntryPerBook.entryDate}}</td>
+						<td>{{statisticPerBook.execPricePerBook}}</td>
+						<td>{{statisticPerBook.totExecQtyPerBook}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

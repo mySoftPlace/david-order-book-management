@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div class="row text-center">
+
+		<div class="col-lg-8">
+			<label><h3>Open a new Order book</h3></label>
+		</div>
+
+		<div class="col-lg-4">
+			<label>Financial Instrument :</label> <select class="form-control"
+				id="finInstrId" ng-model="selectedInstr">
+				<option value="">Please select a financial instrument ....</option>
+				<option ng-repeat="finInstr in financialInstruments"
+					value="{{finInstr.finInstrId}}">{{finInstr.finInstrName}}</option>
+			</select>
+		</div>
+
+		<div class="col-lg-4">
+			<label>Order book name :</label> <input type="text"
+				class="form-control" id="orderBookNameId" ng-model="orderBookName" />
+		</div>
+
+		<br /> <br />
+		<div class="col-lg-8 button-padding">
+			<button type="button" class="btn btn-primary btn-block"
+				id="openOrderBookId"
+				ng-click="openOrderBook(orderBookName, selectedInstr)">{{buttonTitle}}
+			</button>
+		</div>
+	</div>
+
+</body>
+</html>

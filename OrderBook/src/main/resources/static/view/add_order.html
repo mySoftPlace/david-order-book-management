@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div class="row text-center">
+
+		<div class="col-lg-8">
+			<label><h3>Add a new Order in a book</h3></label>
+		</div>
+
+		<div class="col-lg-4">
+			<label>Available order book(s) :</label> <select class="form-control"
+				id="orderBookOpenId" ng-model="selectedOrderBook">
+				<option value="">Please select an open order book ....</option>
+				<option ng-repeat="orderBookopen in orderBookopens"
+					value="{{orderBookopen.orderBookId}}">{{orderBookopen.orderBookName}}</option>
+			</select>
+		</div>
+		<div class="col-lg-2">
+			<label>Quantity :</label> <input type="number" id="quantityId"
+				ng-model="quantity" class="form-control" />
+		</div>
+
+		<div class="col-lg-2">
+			<label>Limit price :</label> <input type="number" id="limitPriceId"
+				ng-model="limitPrice" class="form-control" />
+		</div>
+		<br /> <br />
+		<div class="col-lg-8 button-padding">
+			<button type="button" class="btn btn-primary btn-block"
+				id="addNewOrderId"
+				ng-click="addNewOrder(selectedOrderBook, quantity, limitPrice)">{{buttonTitle}}
+			</button>
+		</div>
+	</div>
+
+</body>
+</html>
