@@ -6,5 +6,6 @@ import orderBook.app.proj.entities.FinancialInstrument;
 
 public interface IFinancialInstrumentBusiness {
 
+	//Retrieve all FinancialInstrument from the database 
 	public List<FinancialInstrument> findAllFinancInstr();
 }

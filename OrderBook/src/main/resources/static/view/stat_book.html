@@ -28,8 +28,9 @@
 				ng-click="displayOrderBookStat(selectedOrderBook)">{{buttonTitle}}
 			</button>
 		</div>
-		<br /> <br />
-		<div class="col-lg-8">
+		<br /> <br /><br /> <br />
+		<div ng-show="display" class="col-lg-8">
+			<label><h3>Statistics before execution of the order book</h3></label>
 			<table id="statisticBeforeExecutionId" class="table table-striped">
 				<thead>
 					<tr>
@@ -53,6 +54,78 @@
 					</tr>
 				</tbody>
 			</table>
+
+            <label><h3>Statistics of earliest and last order entry</h3></label>
+			<table id="earliestAndLastOrderEntryStatId"
+				class="table table-striped">
+				<tbody>
+					<tr>
+						<td>
+							<table id="earliestOrderEntryStatId"
+								class="table table-striped">
+						        <thead>
+						          <tr>
+						            <th colspan="3">Earliest Order Entry</th>
+						          </tr>
+					              <tr>
+					                <th>Quantity order</th>
+					                <th>Limit price</th>
+					                <th>Entry date</th>
+					              </tr>
+					            </thead>
+                                <tbody>
+					              <tr>
+					                <td>{{statisticPerBook.earliestOrdEntryPerBook.quantity}}</td>
+					                <td>{{statisticPerBook.earliestOrdEntryPerBook.limitPrice}}</td>
+					                <td>{{statisticPerBook.earliestOrdEntryPerBook.entryDate}}</td>
+					              </tr>
+				             </tbody>
+			               </table>
+					 </td>
+					 <td>
+					 	<table id="lastOrderEntryStatId"
+						    class="table table-striped">
+						    <thead>
+						      <tr>
+						        <th colspan="3">Last Order Entry</th>
+						          </tr>
+					              <tr>
+					                <th>Quantity order</th>
+					                <th>Limit price</th>
+					                <th>Entry date</th>
+					              </tr>
+					            </thead>
+                                <tbody>
+					              <tr>
+					                <td>{{statisticPerBook.lastOrderEntryPerBook.quantity}}</td>
+					                <td>{{statisticPerBook.lastOrderEntryPerBook.limitPrice}}</td>
+					                <td>{{statisticPerBook.lastOrderEntryPerBook.entryDate}}</td>
+					              </tr>
+				               </tbody>
+			            </table>
+					</td>
+			      </tr>
+				
+				</tbody>
+			
+			</table>
+			
+			<label><h3>Limit break down</h3></label>
+			<table id="limitBreakDownStatId"
+				class="table table-striped">
+				<thead>
+				  <tr>
+				    <th>Limit price</th>
+					<th>Demand per limit price</th>
+				  </tr>
+					</thead>
+                      <tbody>
+					    <tr ng-repeat="priceDemand in statisticPerBook.limitBreakDowns">
+					      <td>{{priceDemand.limitBreakDownPrice}}</td>
+					      <td>{{priceDemand.limitBreakDownDemand}}</td>
+					    </tr>
+				      </tbody>
+			 </table>
 
 			<label><h3>Statistics after execution of the order book</h3></label>
 			<table id="statisticAfterExecutionId" class="table table-striped">

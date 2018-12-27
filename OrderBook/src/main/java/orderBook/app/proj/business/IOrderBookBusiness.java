@@ -14,6 +14,7 @@ public interface IOrderBookBusiness {
 
 	public void validateOrderBook(Long orderBookId, double executionPrice);
 
+	//Linear distribution among all valid orders
 	public OrderBook executeOrderBook(Long orderBookId, int executionQty);
 
 	public List<OrderBook> orderBookOpen();
@@ -21,4 +22,7 @@ public interface IOrderBookBusiness {
 	public List<OrderBook> orderBookClose();
 
 	public List<OrderBook> findAllorderBook();
+	
+	public OrderBook findOrderBookById(Long ordBkId);
+	
 }

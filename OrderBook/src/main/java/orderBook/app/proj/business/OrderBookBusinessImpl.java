@@ -73,8 +73,14 @@ public class OrderBookBusinessImpl implements IOrderBookBusiness {
 			for (Orders order : orders) {
 				actualOrderQty = order.getQuantity() - order.getLastExecuteQty();
 				if (order.getIsValid() == true && actualOrderQty > 0) {
-					orderQtyExecute = (executionTotalQty * actualOrderQty) / validDemand;
-					order.setLastExecuteQty(order.getLastExecuteQty() + orderQtyExecute);
+					if (executionTotalQty >= validDemand) {
+						orderQtyExecute = actualOrderQty;
+						order.setLastExecuteQty(order.getQuantity());
+					} else {
+						orderQtyExecute = (executionTotalQty * actualOrderQty) / validDemand;
+						order.setLastExecuteQty(order.getLastExecuteQty() + orderQtyExecute);
+					}
+
 					newValidDemand = newValidDemand + orderQtyExecute;
 				}
 				updateOrders.add(order);
@@ -104,5 +110,10 @@ public class OrderBookBusinessImpl implements IOrderBookBusiness {
 	@Override
 	public List<OrderBook> findAllorderBook() {
 		return orderBookRepository.findAll();
+	}
+
+	@Override
+	public OrderBook findOrderBookById(Long ordBkId) {
+		return orderBookRepository.findById(ordBkId).get();
 	}
 }

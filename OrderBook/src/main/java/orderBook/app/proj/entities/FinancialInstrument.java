@@ -7,13 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author David Sossavi
+ * 
+ *         The entity to persist Financial Instrument in the database
+ *
+ */
 @Entity
 @Table(name = "FinancialInstrument")
 public class FinancialInstrument implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue

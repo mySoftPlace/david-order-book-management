@@ -37,6 +37,7 @@ public class OrdersBusinessImpl implements IOrdersBusiness {
 				orderRepository.earliestOrderEntryPerBook(orderBookId, PageRequest.of(0, 1)).get(0));
 		statisticPerBook.setLastOrderEntryPerBook(
 				orderRepository.lastOrderEntryPerBook(orderBookId, PageRequest.of(0, 1)).get(0));
+		statisticPerBook.setLimitBreakDowns(orderRepository.limitBreakDownPerBook(orderBookId));
 
 		return statisticPerBook;
 	}
@@ -58,6 +59,7 @@ public class OrdersBusinessImpl implements IOrdersBusiness {
 				orderRepository.lastOrderEntryPerBook(orderBookId, PageRequest.of(0, 1)).get(0));
 		statisticPerBook.setExecPricePerBook(orderBookRepository.execPricePerBook(orderBookId));
 		statisticPerBook.setTotExecQtyPerBook(orderRepository.totalExecutionQtyPerBook(orderBookId));
+		statisticPerBook.setLimitBreakDowns(orderRepository.limitBreakDownPerBook(orderBookId));
 
 		return statisticPerBook;
 	}

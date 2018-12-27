@@ -31,5 +31,6 @@ public class ConfigSecurity extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.formLogin().defaultSuccessUrl("/user/book_index", true);
 		http.authorizeRequests().antMatchers("/user/**").hasRole("USER");
+		http.csrf().disable().authorizeRequests().antMatchers("/user/**").hasRole("USER");
 	}
 }

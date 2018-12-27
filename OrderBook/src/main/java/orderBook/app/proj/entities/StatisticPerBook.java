@@ -1,6 +1,7 @@
 package orderBook.app.proj.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 
@@ -13,7 +14,7 @@ public class StatisticPerBook implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private double totOrdAmtPerBook;
+	private Double totOrdAmtPerBook;
 
 	private Integer totDemandPerBook;
 
@@ -25,11 +26,9 @@ public class StatisticPerBook implements Serializable {
 
 	private Orders lastOrderEntryPerBook;
 
-	private double limitBrkDownPerBook;
+	private Double execPricePerBook;
 
-	private double execPricePerBook;
-
-	private double totValidOrdAmtPerBook;
+	private Double totValidOrdAmtPerBook;
 
 	private Double totInvalidOrdAmtPerBook;
 
@@ -38,16 +37,18 @@ public class StatisticPerBook implements Serializable {
 	private Integer totValidDemandPerBook;
 
 	public Integer totExecQtyPerBook;
+	
+	public List<LimitBreakDown> limitBreakDowns;
 
 	public StatisticPerBook() {
 
 	}
 
-	public double getTotOrdAmtPerBook() {
+	public Double getTotOrdAmtPerBook() {
 		return totOrdAmtPerBook;
 	}
 
-	public void setTotOrdAmtPerBook(double totOrdAmtPerBook) {
+	public void setTotOrdAmtPerBook(Double totOrdAmtPerBook) {
 		this.totOrdAmtPerBook = totOrdAmtPerBook;
 	}
 
@@ -91,27 +92,19 @@ public class StatisticPerBook implements Serializable {
 		this.lastOrderEntryPerBook = lastOrderEntryPerBook;
 	}
 
-	public double getLimitBrkDownPerBook() {
-		return limitBrkDownPerBook;
-	}
-
-	public void setLimitBrkDownPerBook(double limitBrkDownPerBook) {
-		this.limitBrkDownPerBook = limitBrkDownPerBook;
-	}
-
-	public double getExecPricePerBook() {
+	public Double getExecPricePerBook() {
 		return execPricePerBook;
 	}
 
-	public void setExecPricePerBook(double execPricePerBook) {
+	public void setExecPricePerBook(Double execPricePerBook) {
 		this.execPricePerBook = execPricePerBook;
 	}
 
-	public double getTotValidOrdAmtPerBook() {
+	public Double getTotValidOrdAmtPerBook() {
 		return totValidOrdAmtPerBook;
 	}
 
-	public void setTotValidOrdAmtPerBook(double totValidOrdAmtPerBook) {
+	public void setTotValidOrdAmtPerBook(Double totValidOrdAmtPerBook) {
 		this.totValidOrdAmtPerBook = totValidOrdAmtPerBook;
 	}
 
@@ -147,4 +140,11 @@ public class StatisticPerBook implements Serializable {
 		this.totExecQtyPerBook = totExecQtyPerBook;
 	}
 
+	public List<LimitBreakDown> getLimitBreakDowns() {
+		return limitBreakDowns;
+	}
+
+	public void setLimitBreakDowns(List<LimitBreakDown> limitBreakDowns) {
+		this.limitBreakDowns = limitBreakDowns;
+	}
 }

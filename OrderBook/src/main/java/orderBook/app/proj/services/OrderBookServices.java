@@ -105,6 +105,12 @@ public class OrderBookServices {
 		return iOrderBookBusiness.orderBookClose();
 	}
 
+	// Find a specific order book
+	@RequestMapping(value = "/user/book", method = RequestMethod.GET)
+	public OrderBook findOrderBookById(@RequestParam("orderBookId") Long ordBkId) {
+		return iOrderBookBusiness.findOrderBookById(ordBkId);
+	}
+
 	// Find and Display (in a drop down list) all order book
 	@RequestMapping(value = "/user/book/all", method = RequestMethod.GET)
 	public List<OrderBook> findAllorderBook() {

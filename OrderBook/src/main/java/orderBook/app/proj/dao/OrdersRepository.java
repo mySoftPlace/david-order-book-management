@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import orderBook.app.proj.entities.LimitBreakDown;
 import orderBook.app.proj.entities.Orders;
 
 public interface OrdersRepository extends JpaRepository<Orders, Long> {
@@ -25,13 +26,16 @@ public interface OrdersRepository extends JpaRepository<Orders, Long> {
 	@Query("FROM Orders ord WHERE ord.orderBook.orderBookId = :ordBkId order by ord.entryDate DESC")
 	public List<Orders> lastOrderEntryPerBook(@Param("ordBkId") Long orderBookId, Pageable pageable);
 
-	@Query("SELECT SUM(ord.limitPrice) from Orders ord WHERE ord.orderBook.orderBookId = :ordBkId")
+	@Query("SELECT SUM(ord.limitPrice) FROM Orders ord WHERE ord.orderBook.orderBookId = :ordBkId")
 	public Double totalOrderAmountPerBook(@Param("ordBkId") Long orderBookId);
+	
+	@Query("SELECT new orderBook.app.proj.entities.LimitBreakDown(ord.limitPrice, SUM(ord.quantity)) FROM Orders ord WHERE ord.orderBook.orderBookId = :ordBkId GROUP BY ord.limitPrice")
+	public List<LimitBreakDown> limitBreakDownPerBook(@Param("ordBkId") Long orderBookId);
 
-	@Query("SELECT SUM(ord.limitPrice) from Orders ord WHERE ord.orderBook.orderBookId = :ordBkId AND ord.isValid=1")
+	@Query("SELECT SUM(ord.limitPrice) FROM Orders ord WHERE ord.orderBook.orderBookId = :ordBkId AND ord.isValid=1")
 	public Double totalValidOrderAmountPerBook(@Param("ordBkId") Long orderBookId);
 
-	@Query("SELECT SUM(ord.limitPrice) from Orders ord WHERE ord.orderBook.orderBookId = :ordBkId AND ord.isValid=0")
+	@Query("SELECT SUM(ord.limitPrice) FROM Orders ord WHERE ord.orderBook.orderBookId = :ordBkId AND ord.isValid=0")
 	public Double totalInvalidOrderAmountPerBook(@Param("ordBkId") Long orderBookId);
 
 	@Query("SELECT SUM(ord.quantity) FROM Orders ord WHERE ord.orderBook.orderBookId = :ordBkId AND ord.isValid=1")
