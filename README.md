@@ -7,7 +7,7 @@ This project is an example of small implementation of the order book management 
 	 	Run As --> Maven clean
 	 	Run As --> Maven install
 	 	
-	2) In the class OrderBookApplication.java (which is in the package orderBook.app.proj):
+	2) In the class OrderBookAppApplication.java (which is in the package orderBook.app.proj):
 		Right click --> Run As --> Java Application or Spring Boot App
 		
 	3) On the browser (chrome or firefox...) type:
