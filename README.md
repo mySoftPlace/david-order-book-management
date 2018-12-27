@@ -3,7 +3,7 @@ This project is an example of small implementation of the order book management 
 
  # To test this application :
 
-	1) Right click on the project CanooApp and then:
+	1) Right click on the project OrderBookApp and then:
 	 	Run As --> Maven clean
 	 	Run As --> Maven install
 	 	
