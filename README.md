@@ -23,6 +23,7 @@ This project is an example of small implementation of the order book management 
 		HTML
 		CSS
 		Database: Mysql
+		Database name: db_order_book
 	
 	I used jdk-10.0.1
          spring-boot 2.0.4
