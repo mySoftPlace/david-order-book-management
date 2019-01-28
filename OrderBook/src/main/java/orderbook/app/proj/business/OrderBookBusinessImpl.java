@@ -1,4 +1,4 @@
-package orderBook.app.proj.business;
+package orderbook.app.proj.business;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import orderBook.app.proj.dao.OrderBookRepository;
-import orderBook.app.proj.entities.OrderBook;
-import orderBook.app.proj.entities.Orders;
+import orderbook.app.proj.dao.OrderBookRepository;
+import orderbook.app.proj.entities.OrderBook;
+import orderbook.app.proj.entities.Orders;
 
 @Service
 public class OrderBookBusinessImpl implements IOrderBookBusiness {

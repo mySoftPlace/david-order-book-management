@@ -1,7 +1,7 @@
-package orderBook.app.proj.business;
+package orderbook.app.proj.business;
 
-import orderBook.app.proj.entities.Orders;
-import orderBook.app.proj.entities.StatisticPerBook;
+import orderbook.app.proj.entities.Orders;
+import orderbook.app.proj.entities.StatisticPerBook;
 
 public interface IOrdersBusiness {
 

@@ -12,11 +12,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import orderBook.app.proj.business.IOrderBookBusiness;
-import orderBook.app.proj.business.IOrdersBusiness;
-import orderBook.app.proj.entities.FinancialInstrument;
-import orderBook.app.proj.entities.OrderBook;
-import orderBook.app.proj.entities.Orders;
+import orderbook.app.proj.business.IOrderBookBusiness;
+import orderbook.app.proj.business.IOrdersBusiness;
+import orderbook.app.proj.entities.FinancialInstrument;
+import orderbook.app.proj.entities.OrderBook;
+import orderbook.app.proj.entities.Orders;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

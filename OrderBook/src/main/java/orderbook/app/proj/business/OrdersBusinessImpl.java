@@ -1,4 +1,4 @@
-package orderBook.app.proj.business;
+package orderbook.app.proj.business;
 
 import java.util.Date;
 
@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import orderBook.app.proj.dao.OrderBookRepository;
-import orderBook.app.proj.dao.OrdersRepository;
-import orderBook.app.proj.entities.Orders;
-import orderBook.app.proj.entities.StatisticPerBook;
+import orderbook.app.proj.dao.OrderBookRepository;
+import orderbook.app.proj.dao.OrdersRepository;
+import orderbook.app.proj.entities.Orders;
+import orderbook.app.proj.entities.StatisticPerBook;
 
 @Service
 public class OrdersBusinessImpl implements IOrdersBusiness {

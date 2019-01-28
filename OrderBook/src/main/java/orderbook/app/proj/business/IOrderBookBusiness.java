@@ -1,8 +1,8 @@
-package orderBook.app.proj.business;
+package orderbook.app.proj.business;
 
 import java.util.List;
 
-import orderBook.app.proj.entities.OrderBook;
+import orderbook.app.proj.entities.OrderBook;
 
 public interface IOrderBookBusiness {
 

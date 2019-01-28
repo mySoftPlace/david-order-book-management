@@ -1,4 +1,4 @@
-package orderBook.app.proj.services;
+package orderbook.app.proj.services;
 
 import java.util.List;
 
@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import orderBook.app.proj.business.IFinancialInstrumentBusiness;
-import orderBook.app.proj.business.IOrderBookBusiness;
-import orderBook.app.proj.business.IOrdersBusiness;
-import orderBook.app.proj.entities.Orders;
-import orderBook.app.proj.entities.FinancialInstrument;
-import orderBook.app.proj.entities.OrderBook;
-import orderBook.app.proj.entities.StatisticPerBook;
+import orderbook.app.proj.business.IFinancialInstrumentBusiness;
+import orderbook.app.proj.business.IOrderBookBusiness;
+import orderbook.app.proj.business.IOrdersBusiness;
+import orderbook.app.proj.entities.FinancialInstrument;
+import orderbook.app.proj.entities.OrderBook;
+import orderbook.app.proj.entities.Orders;
+import orderbook.app.proj.entities.StatisticPerBook;
 
 /**
  * 

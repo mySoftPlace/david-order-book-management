@@ -1,4 +1,4 @@
-package orderBook.app.proj.dao;
+package orderbook.app.proj.dao;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import orderBook.app.proj.entities.OrderBook;
+import orderbook.app.proj.entities.OrderBook;
 
 public interface OrderBookRepository extends JpaRepository<OrderBook, Long> {
 

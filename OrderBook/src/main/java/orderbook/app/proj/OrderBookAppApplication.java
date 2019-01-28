@@ -1,11 +1,11 @@
-package orderBook.app.proj;
+package orderbook.app.proj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import orderBook.app.proj.dao.FinancialInstrumentRepository;
-import orderBook.app.proj.entities.FinancialInstrument;
+import orderbook.app.proj.dao.FinancialInstrumentRepository;
+import orderbook.app.proj.entities.FinancialInstrument;
 
 /**
  * 
@@ -19,7 +19,7 @@ public class OrderBookAppApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(OrderBookAppApplication.class, args);
-		orderBook.app.proj.dao.FinancialInstrumentRepository financialInstrumentRepository = ctx
+		orderbook.app.proj.dao.FinancialInstrumentRepository financialInstrumentRepository = ctx
 				.getBean(FinancialInstrumentRepository.class);
 
 		financialInstrumentRepository.save(new FinancialInstrument("FinancialInstrument1"));

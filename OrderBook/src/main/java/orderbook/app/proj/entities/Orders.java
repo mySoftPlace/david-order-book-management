@@ -1,4 +1,4 @@
-package orderBook.app.proj.entities;
+package orderbook.app.proj.entities;
 
 import java.io.Serializable;
 import java.util.Date;
