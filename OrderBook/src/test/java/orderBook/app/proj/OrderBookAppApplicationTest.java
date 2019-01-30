@@ -20,7 +20,7 @@ import orderbook.app.proj.entities.Orders;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class OrderBookAppApplicationTests {
+public class OrderBookAppApplicationTest {
 
 	@MockBean
 	private IOrderBookBusiness iOrderBookBusiness;
