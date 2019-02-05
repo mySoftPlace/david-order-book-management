@@ -19,7 +19,7 @@ public class OrderBookAppApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(OrderBookAppApplication.class, args);
-		orderbook.app.proj.dao.FinancialInstrumentRepository financialInstrumentRepository = ctx
+		FinancialInstrumentRepository financialInstrumentRepository = ctx
 				.getBean(FinancialInstrumentRepository.class);
 
 		financialInstrumentRepository.save(new FinancialInstrument("FinancialInstrument1"));
