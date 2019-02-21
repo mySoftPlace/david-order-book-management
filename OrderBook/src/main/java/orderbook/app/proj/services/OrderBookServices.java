@@ -68,13 +68,13 @@ public class OrderBookServices {
 	}
 
 	// Find a specific Order
-	@RequestMapping(value = "/user/order/{orderId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/order", method = RequestMethod.GET)
 	public Orders findOrderById(@RequestParam("orderId") Long ordId) {
 		return iOrderBusiness.findOrderById(ordId);
 	}
 
 	// Get the execution price (for statistic)
-	@RequestMapping(value = "/user/book/exec/price/{orderBookId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/book/exec/price", method = RequestMethod.GET)
 	public double findExecPricePerBook(@RequestParam("orderBookId") Long ordBkId) {
 		return iOrderBookBusiness.findExecPricePerBook(ordBkId);
 	}
